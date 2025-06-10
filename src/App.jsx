@@ -3,6 +3,7 @@ import { Mail, Github, Linkedin, ArrowLeft, ExternalLink } from 'lucide-react'
 import WorkCard from './components/WorkCard'
 import WorkDetails from './components/WorkDetails'
 import { workData } from './assets/WorkData'
+import Toolbelt from './components/Toolbelt'
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -145,8 +146,8 @@ export default function App() {
 
           <section id="work" className="min-h-screen bg-gray-50 py-20">
             <div className="max-w-5xl mx-auto px-6">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">My Work</h2>
-              <p className="text-gray-600 text-lg mb-12">Here are some of the projects I've worked on</p>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">My Work.</h2>
+              <p className="text-gray-600 text-lg mb-12">Here are some of the projects I've worked on.</p>
               
               <div className="flex flex-col gap-12">
                 <WorkCard
@@ -180,16 +181,17 @@ export default function App() {
           </section>
 
           <section id="about" className="min-h-screen bg-white py-20">
-            <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-4xl font-bold text-gray-800 mb-8">Tool Belt</h2>
-              <p className="text-gray-600 text-lg">Tool Belt will go here...</p>
+            <div className="max-w-5xl mx-auto px-6">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">Toolbelt.</h2>
+              <p className="text-gray-600 text-lg mb-12">My technology stack and tools.</p>
+              <Toolbelt />
             </div>
           </section>
 
           <section id="about" className="min-h-screen bg-gray-50 py-20">
-            <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-4xl font-bold text-gray-800 mb-8">About Me</h2>
-              <p className="text-gray-600 text-lg">About section content will go here...</p>
+            <div className="max-w-5xl mx-auto px-6">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+              <p className="text-gray-600 text-lg mb-12">About section content will go here...</p>
             </div>
           </section>
         </>
