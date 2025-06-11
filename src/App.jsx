@@ -11,6 +11,7 @@ import { workData } from './assets/WorkData'
 import Toolbelt from './components/Toolbelt'
 import About from './components/About'
 import Bottom from './components/Bottom'
+import Footer from './components/Footer'
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -132,7 +133,10 @@ export default function App() {
       </nav>
 
       {currentView === 'work-detail' && selectedWork ? (
-        <WorkDetails workItem={selectedWork} onBack={handleBackToWork} />
+        <>
+          <WorkDetails workItem={selectedWork} onBack={handleBackToWork} />
+          <Footer />
+        </>
       ) : (
         <>
           <section
@@ -200,6 +204,7 @@ export default function App() {
             </div>
           </section>
           <Bottom />
+          <Footer />
         </>
       )}
     </div>
