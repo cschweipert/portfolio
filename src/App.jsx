@@ -79,7 +79,7 @@ export default function App() {
                 isScrolled || currentView === 'work-detail' ? 'text-gray-800' : 'text-white'
               } hover:!text-blue-400`}
             >
-              Tool Belt
+              Toolbelt
             </button>
             <button 
               onClick={() => scrollToSection('about')} 
