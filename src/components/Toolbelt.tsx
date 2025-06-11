@@ -36,7 +36,6 @@ export default function Toolbelt() {
     { icon: SiDjango, name: 'Django', color: '#092E20' },
     { icon: SiPostgresql, name: 'PostgreSQL', color: '#4169E1' },
     { icon: SiSqlalchemy, name: 'SQLAlchemy', color: '#D71F00' },
-    // { icon: SiMysql, name: 'MySQL', color: '#4479A1' },
     { icon: SiPlotly, name: 'Dash', color: '#3F4F75' },
     { icon: SiDocker, name: 'Docker', color: '#2496ED' },
     { icon: SiAmazonwebservices, name: 'AWS', color: '#FF9900' },
@@ -45,8 +44,8 @@ export default function Toolbelt() {
   ]
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+    <div className="w-full">
+      <div className="grid grid-cols-3 gap-6">
         {technologies.map((tech, index) => {
           const IconComponent = tech.icon
           return (

@@ -199,7 +199,7 @@ export default function App() {
 
           <section id="about" className="min-h-screen bg-gray-50 py-20">
             <div className="max-w-5xl mx-auto px-6">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">About Me.</h2>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4 text-center">About Me.</h2>
               <About />
             </div>
           </section>
