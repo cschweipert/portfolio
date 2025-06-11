@@ -8,7 +8,7 @@ export const workData = {
     companyUrl: 'https://electra.earth',
     compDescription: "Electra is a pioneering clean iron company focused on revolutionizing the steel industry with sustainable practices and innovative technology.",
     description: 'As a Software Engineer at Electra, I spend my time planning, designing, and building the internal data tooling platform that supports our scientists and engineers in their data needs and visualizations.',
-    technologies: ['Next.js', 'Typescript', 'PostgreSQL', 'Python', 'FastAPI', 'Docker', 'SQLAlchmemy', 'DASH'],
+    technologies: ['Next.js', 'Typescript', 'PostgreSQL', 'Python', 'FastAPI', 'Docker', 'SQLAlchemy', 'DASH'],
     situation: 'Electra needed robust internal tooling to streamline their operations and improve team productivity. The existing systems were fragmented and inefficient.',
     task: 'Design and develop a comprehensive internal tooling platform that would integrate multiple workflows and provide a seamless user experience.',
     action: 'Built a full-stack application using Next.js for the frontend with TypeScript for type safety, developed RESTful APIs with FastAPI and Python, implemented PostgreSQL database with optimized queries, and containerized the entire application with Docker for consistent deployment.',

@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { Mail, Github, Linkedin, ArrowLeft, ExternalLink } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import {
+  SiLinkedin,
+  SiGithub,
+} from 'react-icons/si'
+
 import WorkCard from './components/WorkCard'
 import WorkDetails from './components/WorkDetails'
 import { workData } from './assets/WorkData'
 import Toolbelt from './components/Toolbelt'
+import About from './components/About'
+import Bottom from './components/Bottom'
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -66,7 +73,7 @@ export default function App() {
               Work
             </button>
             <button 
-              onClick={() => scrollToSection('about')} 
+              onClick={() => scrollToSection('toolbelt')} 
               className={`cursor-pointer transition-all duration-200 ${
                 isScrolled || currentView === 'work-detail' ? 'text-gray-800' : 'text-white'
               } hover:!text-blue-400`}
@@ -86,7 +93,6 @@ export default function App() {
           <div className={`flex items-center gap-3 pr-8 ${
             isScrolled || currentView === 'work-detail' ? 'text-gray-800' : 'text-white'
           }`}>
-            {/* <span>Contact | </span> */}
             <a 
               href="mailto:christina@motherdata.earth" 
               className={`transition-all duration-200 ${
@@ -107,7 +113,7 @@ export default function App() {
                   : 'text-white hover:text-blue-300'
               }`}
             >
-              <Github size={20} />
+              <SiGithub size={20} />
             </a>
             <a 
               href="https://linkedin.com/in/christinaschweipert" 
@@ -119,7 +125,7 @@ export default function App() {
                   : 'text-white hover:text-blue-300'
               }`}
             >
-              <Linkedin size={20} />
+              <SiLinkedin size={20} />
             </a>
           </div>
         </div>
@@ -129,7 +135,6 @@ export default function App() {
         <WorkDetails workItem={selectedWork} onBack={handleBackToWork} />
       ) : (
         <>
-          {/* Landing Page */}
           <section
             id="home"
             className="h-screen bg-cover bg-center flex items-center justify-start relative"
@@ -180,7 +185,7 @@ export default function App() {
             </div>
           </section>
 
-          <section id="about" className="min-h-screen bg-white py-20">
+          <section id="toolbelt" className="min-h-screen bg-white py-20">
             <div className="max-w-5xl mx-auto px-6">
               <h2 className="text-4xl font-bold text-gray-800 mb-4">Toolbelt.</h2>
               <p className="text-gray-600 text-lg mb-12">My technology stack and tools.</p>
@@ -190,10 +195,11 @@ export default function App() {
 
           <section id="about" className="min-h-screen bg-gray-50 py-20">
             <div className="max-w-5xl mx-auto px-6">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
-              <p className="text-gray-600 text-lg mb-12">About section content will go here...</p>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">About Me.</h2>
+              <About />
             </div>
           </section>
+          <Bottom />
         </>
       )}
     </div>
