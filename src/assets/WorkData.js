@@ -54,7 +54,7 @@ export const workData = {
     id: 'tpg',
     image: '/tpg_2.png',
     wide_img: '/tpg_wide.png',
-    company: 'Travelpassgroup - Your custom travel experience.',
+    company: 'Travelpass - Your custom travel experience.',
     role: 'Data Engineer',
     period: '1/2022 - 7/2022',
     location: 'South Jordan, UT, remote',
