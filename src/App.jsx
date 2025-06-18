@@ -149,7 +149,7 @@ export default function App() {
             <div className="relative text-gray-300 text-left ml-12 z-20">
               <h1 className="text-6xl font-bold mb-4">Christina Schweipert</h1>
               <p className="text-3xl font-light">Software Engineer solving complex Application and API Design Challenges.</p>
-              <p className="text-xl font-light">Driven by curiosity and a deep love for mother Earth.</p>
+              <p className="text-xl font-light">Driven by curiosity and a deep love for mother earth.</p>
             </div>
           </section>
 
