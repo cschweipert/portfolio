@@ -18,7 +18,10 @@ import {
   SiPlotly,
   SiDocker,
   SiAmazonwebservices,
-  SiTailwindcss
+  SiTailwindcss,
+  SiGoogleearthengine,
+  SiArcgis,
+  SiLeaflet
 } from 'react-icons/si'
 
 export default function Toolbelt() {
@@ -40,7 +43,10 @@ export default function Toolbelt() {
     { icon: SiDocker, name: 'Docker', color: '#2496ED' },
     { icon: SiAmazonwebservices, name: 'AWS', color: '#FF9900' },
     { icon: SiGithub, name: 'GitHub', color: '#181717' },
-    { icon: SiRubyonrails, name: 'Ruby on Rails', color: '#CC0000' }
+    { icon: SiRubyonrails, name: 'Ruby on Rails', color: '#CC0000' },
+    { icon: SiGoogleearthengine, name: 'Google Earth Engine', color: '#34A853' },
+    { icon: SiArcgis, name: 'ArcGIS', color: '#0079C1' },
+    { icon: SiLeaflet, name: 'Leaflet', color: '#199900' },
   ]
 
   return (
