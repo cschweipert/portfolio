@@ -1,4 +1,30 @@
 export const workData = {
+  atmospheric_river: {
+    id: 'atmospheric_river',
+    image: '/ar.png',
+    wide_img: '/ar.png',
+    company: 'Atmospheric River Forecast',
+    role: 'Personal Project - Full Stack Geospatial Application',
+    period: '2024',
+    location: 'Personal Project',
+    companyUrl: 'https://atmospheric-river.netlify.app/',
+    compDescription: "A full-stack geospatial web application for detecting, tracking, forecasting, and visualizing atmospheric rivers using real-time NOAA meteorological data.",
+    description: 'Built a comprehensive atmospheric river detection and forecasting system that processes GRIB2 meteorological data from NOAA every 6 hours, calculates Integrated Vapor Transport (IVT), and provides interactive visualizations for current and forecasted AR events.',
+    technologies: ['FastAPI', 'PostgreSQL', 'PostGIS', 'SQLAlchemy', 'Preact', 'OpenLayers', 'NumPy', 'SciPy', 'pygrib', 'Shapely', 'APScheduler', 'Alembic'],
+    situation: 'Atmospheric Rivers are critical weather phenomena causing significant precipitation events, but real-time detection and forecasting tools were limited for researchers and decision-makers.',
+    task: 'Design and implement a full-stack geospatial application that automatically fetches NOAA GFS data, performs scientific AR detection using IVT calculations, stores spatial data, and provides interactive visualizations.',
+    action: 'Built automated data pipeline processing GRIB2 files every 6 hours; implemented IVT calculation through vertical integration of wind and humidity data; developed AR detection algorithm using geometric criteria (IVT ≥ 250 kg/(m·s), length ≥ 2000 km); created PostGIS spatial database with GeoAlchemy2; built interactive mapping with OpenLayers; implemented forecast animation up to 120+ hours; added historical analysis and location-based impact queries.',
+    result: 'Created a fully functional AR detection system providing real-time and forecasted atmospheric river data with interactive maps, historical tracking, and geospatial query capabilities for researchers and forecasters.',
+    responsibilities: [
+      'Full-stack geospatial application development',
+      'Scientific algorithm implementation for AR detection',
+      'GRIB2 meteorological data processing',
+      'PostGIS spatial database design',
+      'Automated scheduling with APScheduler',
+      'Interactive mapping with OpenLayers',
+      'REST API development with FastAPI'
+    ]
+  },
   electra: {
     id: 'electra',
     image: '/electra_2.png',
