@@ -79,7 +79,7 @@ export default function App() {
                 isScrolled || currentView === 'work-detail' ? 'text-gray-800' : 'text-white'
               } hover:!text-blue-400`}
             >
-              Geospatial project
+              Geospatial data project
             </button>
             <button
               onClick={() => scrollToSection('toolbelt')}
@@ -169,7 +169,6 @@ export default function App() {
               <div className="flex flex-col gap-12">
                 <WorkCard
                   image={workData.electra.image}
-                  title={workData.electra.title}
                   company={workData.electra.company}
                   description={workData.electra.description}
                   technologies={workData.electra.technologies}
@@ -178,7 +177,6 @@ export default function App() {
                 
                 <WorkCard
                   image={workData.wikirate.image}
-                  title={workData.wikirate.title}
                   company={workData.wikirate.company}
                   description={workData.wikirate.description}
                   technologies={workData.wikirate.technologies}
@@ -187,7 +185,6 @@ export default function App() {
 
                 <WorkCard
                   image={workData.tpg.image}
-                  title={workData.tpg.title}
                   company={workData.tpg.company}
                   description={workData.tpg.description}
                   technologies={workData.tpg.technologies}
@@ -199,9 +196,9 @@ export default function App() {
 
           <section id="geospatial" className="min-h-screen bg-white py-20">
             <div className="max-w-5xl mx-auto px-6">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">Atmospheric River Forecast.</h2>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">Geospatial Data Project.</h2>
               <p className="text-gray-600 text-lg mb-8">
-                A full-stack geospatial web application for detecting, tracking, and forecasting atmospheric rivers using real-time NOAA meteorological data.
+                Atmospheric River Forecast — a scheduled pipeline that ingests NOAA forecast data every six hours, detects atmospheric rivers in it, and serves the results as an interactive map.
               </p>
 
               <div className="bg-gray-50 rounded-lg p-8 shadow-lg">
@@ -222,26 +219,28 @@ export default function App() {
                   <div>
                     <h3 className="text-2xl font-semibold text-gray-800 mb-3">Overview</h3>
                     <p className="text-gray-700 leading-relaxed">
-                      This application processes GRIB2 meteorological data from NOAA every 6 hours, calculating Integrated Vapor Transport (IVT)
-                      to detect and track atmospheric rivers. It provides real-time visualization of current and forecasted AR events with
-                      interactive maps, historical analysis, and location-based impact queries.
+                      A scheduled job pulls GRIB2 model output from NOAA on the GFS cycle (0Z, 6Z, 12Z, 18Z), computes Integrated Vapor
+                      Transport by vertically integrating wind and humidity, applies geometric detection criteria to isolate atmospheric
+                      river events, and writes them to PostGIS as spatial geometries. A FastAPI query layer then serves current conditions,
+                      forecasts, and historical lookback to an interactive map — no manual handling between the raw files and the map.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">Key Features</h3>
                     <ul className="list-disc list-inside text-gray-700 space-y-1">
-                      <li>Automated AR detection using scientific criteria (IVT ≥ 250 kg/(m·s), length ≥ 2000 km)</li>
-                      <li>Real-time map with color-coded AR intensities and forecast animation (up to 120+ hours)</li>
-                      <li>Historical AR tracking and frequency analysis</li>
-                      <li>Geospatial queries with PostGIS for bounding box and distance-based searches</li>
+                      <li>Scheduled ingestion of NOAA GFS GRIB2 output every 6 hours (APScheduler, pygrib)</li>
+                      <li>AR detection from scientific criteria (IVT ≥ 250 kg/(m·s), length ≥ 2000 km)</li>
+                      <li>Forecast detection out to 72 hours, with temporal tracking of events across time steps</li>
+                      <li>Spatial modeling in PostGIS with Alembic-managed schema changes</li>
+                      <li>Geospatial queries for bounding box and distance-based lookups</li>
                     </ul>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">Technology Stack</h3>
                     <div className="flex flex-wrap gap-2">
-                      {['FastAPI', 'PostgreSQL', 'PostGIS', 'SQLAlchemy', 'Preact', 'OpenLayers', 'NumPy', 'SciPy', 'pygrib', 'Shapely'].map(tech => (
+                      {['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'SQLAlchemy', 'GeoAlchemy2', 'Alembic', 'APScheduler', 'pygrib', 'NumPy', 'SciPy', 'Shapely', 'Preact', 'OpenLayers'].map(tech => (
                         <span key={tech} className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">
                           {tech}
                         </span>
