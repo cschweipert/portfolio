@@ -1,7 +1,7 @@
 import React from 'react'
 import { ExternalLink } from 'lucide-react'
 
-export default function WorkCard({ image, title, company, description, technologies, onClick }) {
+export default function WorkCard({ image, company, description, technologies, onClick }) {
   return (
     <div
       className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 overflow-hidden"
