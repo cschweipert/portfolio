@@ -1,4 +1,29 @@
 export const workData = {
+  atmospheric_river: {
+    id: 'atmospheric_river',
+    image: '/ar.png',
+    wide_img: '/ar.png',
+    company: 'Atmospheric River Forecast',
+    role: 'Personal Project - Geospatial Data Pipeline & Forecast App',
+    period: '2024',
+    location: 'Personal Project',
+    companyUrl: 'https://atmospheric-river.netlify.app/',
+    compDescription: "A scheduled pipeline that ingests NOAA forecast data every six hours, detects atmospheric rivers from it, and serves the results as an interactive map.",
+    description: 'An end-to-end pipeline for atmospheric river detection: it pulls GRIB2 model output from NOAA on a six-hour cycle, computes Integrated Vapor Transport, applies detection criteria to find AR events, writes them to a PostGIS database, and serves forecasts up to 120 hours out through an interactive map.',
+    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'PostGIS', 'SQLAlchemy', 'GeoAlchemy2', 'Alembic', 'APScheduler', 'pygrib', 'NumPy', 'SciPy', 'Shapely', 'Preact', 'OpenLayers'],
+    situation: 'Atmospheric rivers drive a large share of West Coast precipitation and flooding, but the model output that describes them ships as GRIB2 files on a fixed forecast cycle \u2014 a format that is awkward to query and impossible to explore interactively.',
+    task: 'Build a pipeline that turns a recurring drop of raw meteorological files into queryable, mapped AR events, without manual steps in between.',
+    action: 'Wrote a scheduled ingestion job (APScheduler) that fetches NOAA GFS GRIB2 output every six hours and parses it with pygrib. Computed Integrated Vapor Transport by vertically integrating wind and humidity across pressure levels, then applied geometric detection criteria (IVT >= 250 kg/(m*s), length >= 2000 km) to isolate AR events. Modeled the results as spatial geometries in PostGIS via GeoAlchemy2 with Alembic-managed schema changes, exposed them through a FastAPI query layer supporting location-based and historical lookups, and rendered forecast animations in OpenLayers.',
+    result: 'A self-updating system that turns each forecast cycle into mapped, queryable AR events with no manual handling \u2014 covering current conditions, forecasts past 120 hours, and historical lookback by location.',
+    responsibilities: [
+      'Scheduled ingestion pipeline for NOAA GRIB2 forecast data',
+      'Scientific transform: Integrated Vapor Transport computation',
+      'Detection algorithm using geometric criteria',
+      'PostGIS spatial schema design and migrations',
+      'FastAPI query layer for spatial and historical lookups',
+      'Interactive forecast visualization with OpenLayers'
+    ]
+  },
   electra: {
     id: 'electra',
     image: '/electra_3.png',
